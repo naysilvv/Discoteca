@@ -1,0 +1,20 @@
+* {
+    font-family: 'Roboto';
+}
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-color: #f3f8fc;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.nav {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: lighter;
+}
