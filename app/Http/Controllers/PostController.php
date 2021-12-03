@@ -12,7 +12,7 @@ class PostController extends Controller
     {
         $posts = Post::all();
 
-        return view('home', ['posts' => $posts]);
+        return view('posts', ['posts' => $posts]);
     }
 
     public function create()
