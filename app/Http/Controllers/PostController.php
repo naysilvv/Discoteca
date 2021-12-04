@@ -17,18 +17,39 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        return view('cadastroPost');
     }
 
-    public function discoSearch()
+    public function store(Request $request)
     {
-        $busca = request('search');
+        $post = new Post();
 
-        return view('discos', ['busca' => $busca]);
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->content = $request->content;
+
+        if ($request->hasFile('img') && $request->file('img')->isValid()) {
+            $requestImage = $request->img;
+
+            $extension = $requestImage->extension();
+            
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/posts'), $imageName);
+
+            $post->img = $imageName;
+        }
+
+        $post->save();
+
+        return redirect('/');
     }
 
-    public function discoView($id = null)
+    public function show($id)
     {
-        return view('disco', ['id' => $id]);
+        $post = Post::findOrFail($id);
+
+        return view('detail-post', ['post' => $post]);
     }
+
 }
