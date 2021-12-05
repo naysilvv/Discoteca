@@ -46,9 +46,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/market">MarketPlace</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/market/create/">Adicionar Disco</a>
-                </li>
             </ul>
         </div>
         <div class="mx-auto order-0">
@@ -57,16 +54,35 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
+      
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+           
             <ul class="navbar-nav ml-auto">
+                @auth
+                <li class="nav-item">
+                    <a class="nav-link" href="/market/create/">Adicionar Disco</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <form action="/logout" method="POST">
+                    @csrf   
+                        <a class="nav-link" href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
+                    </form>
+                </li>
+                @endauth
+                @guest
                 <li class="nav-item">
                     <a class="nav-link" href="/register">Registrar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
                 </li>
+                @endguest
             </ul>
         </div>
+        
     </nav>
 
     <main>

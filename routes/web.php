@@ -25,3 +25,6 @@ Route::get('/market/create', [MarketController::class, 'create']);
 Route::post('/market', [MarketController::class, 'store']);
 
 Route::get('/market/{id}', [MarketController::class, 'show']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
