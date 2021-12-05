@@ -5,9 +5,13 @@
 <header class="masthead">
     <div class="container">
         <div class="input-group-prepend">
-            <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Search">
-
+            <form action="/market" method="get">
+                 <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Search" id="search" name="search">
+            </form>
         </div>
+        @if($search)
+        <p>Buscando por: {{$search}}</p>
+         @endif
     </div>
 </header>
 
@@ -34,6 +38,12 @@
                 </div>
             </div>
         @endforeach
+         @if(count($items) == 0 && $search)
+            <p>Não é possivel encontrar essa busca: {{$search}}</p>
+            <a href="/market">Ver todas os discos</a>
+        @elseif(count($items) == 0)
+            <p>Não há notícias disponíveis</p>
+        @endif    
         </div>
     </div>
 </section>

@@ -10,9 +10,16 @@ class MarketController extends Controller
 {
     public function index()
     {
-        $items = Market::all();
-
-        return view('marketplace', ['items' => $items]);
+        $search = request('search');
+        if($search){
+             $items = Market::where([
+                ['name','like','%'.$search.'%']
+             ])->get();
+        } else{
+             $items = Market::all();
+        }
+    
+        return view('marketplace', ['items' => $items,'search' => $search]);
     }
 
     public function create()

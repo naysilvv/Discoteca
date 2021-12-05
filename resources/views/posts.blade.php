@@ -5,14 +5,20 @@
 <header class="masthead">
     <div class="container">
         <div class="input-group-prepend">
-            <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Search">
+            <form action="/" method="get">
+                 <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Search" id="search" name="search">
+            </form>
         </div>
+        @if($search)
+        <p>Buscando por: {{$search}}</p>
+         @endif
     </div>
 </header>
 
 @section('content')
 
 <div class="container">
+  
     <div class="row">
         @foreach($posts as $post)
         <div class="col-sm-6">
@@ -31,7 +37,15 @@
             </div>
         </div>
         @endforeach
+       
     </div>
+     @if(count($posts) == 0 && $search)
+            <p>Não é possivel encontrar essa busca: {{$search}}</p>
+            <a href="/">Ver todas as postagens</a>
+        @elseif(count($posts) == 0)
+            <p>Não há notícias disponíveis</p>
+        @endif    
 </div>
+ 
 
 @endsection
