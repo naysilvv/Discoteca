@@ -26,7 +26,7 @@
                     <a href="/post/{{ $post->id }}" class="btn btn-primary">Ler matéria</a>
                 </div>
                 <div class="card-footer text-muted">
-                    <p>{{ $post->created_at }}</p>
+                    <p>{{ date('d/m/Y'), strtotime($post->created_at) }}</p>
                 </div>
             </div>
         </div>
