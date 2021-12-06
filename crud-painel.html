@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Adicionar Disco</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/icon-discoteca.png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <link href="css/styles.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="posts.html">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="markteplace.html">MarketPlace</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastrodisco.html">Adicionar Disco</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="crud-painel.html">Meus Discos</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#">Museu do Vinil</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="registro.html">Registrar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-xl">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2><b>Museu do Vinil</b></h2>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Adicionar Disco</span></a>
+                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Deletar</span></a>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="selectAll">
+                                    <label for="selectAll"></label>
+                                </span>
+                            </th>
+                            <th>Nome</th>
+                            <th>Artista</th>
+                            <th>Email</th>
+                            <th>Ano</th>
+                            <th>Valor</th>
+                            <th>Acao</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                    <label for="checkbox1"></label>
+                                </span>
+                            </td>
+                            <td>Thomas Hardy</td>
+                            <td>artista1</td>
+                            <td>thomashardy@mail.com</td>
+                            <td>2021</td>
+                            <td>40,00</td>
+                            <td>
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox2" name="options[]" value="1">
+                                    <label for="checkbox2"></label>
+                                </span>
+                            </td>
+                            <td>Dominique Perrier</td>
+                            <td>artista2</td>
+                            <td>dominiqueperrier@mail.com</td>
+                            <td>1970</td>
+                            <td>50,00</td>
+                            <td>
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox3" name="options[]" value="1">
+                                    <label for="checkbox3"></label>
+                                </span>
+                            </td>
+                            <td>Maria Anders</td>
+                            <td>artista3</td>
+                            <td>mariaanders@mail.com</td>
+                            <td>1850</td>
+                            <td>40,00</td>
+                            <td>
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox4" name="options[]" value="1">
+                                    <label for="checkbox4"></label>
+                                </span>
+                            </td>
+                            <td>Fran Wilson</td>
+                            <td>artista4</td>
+                            <td>franwilson@mail.com</td>
+                            <td>2000</td>
+                            <td>30,00</td>
+                            <td>
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                    <label for="checkbox5"></label>
+                                </span>
+                            </td>
+                            <td>Martin Blank</td>
+                            <td>artista5</td>
+                            <td>martinblank@mail.com</td>
+                            <td>2001</td>
+                            <td>60,00</td>
+                            <td>
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="clearfix">
+                    <div class="hint-text">Mostrando <b>5</b> de <b>25</b> entradas</div>
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a href="#">Anterior</a></li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">4</a></li>
+                        <li class="page-item"><a href="#" class="page-link">5</a></li>
+                        <li class="page-item"><a href="#" class="page-link">Pr�ximo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Modal HTML -->
+    <div id="addEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Adicionar Disco</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text" class="form-control-edtdisco" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Artista</label>
+                            <input type="text" class="form-control-edtdisco" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control-edtdisco" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ano</label>
+                            <input type="text" class="form-control-edtdisco" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Valor</label>
+                            <input type="text" class="form-control-edtdisco" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                        <input type="submit" class="btn btn-success" value="Adicionar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Modal HTML -->
+    <div id="editEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Editar</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control-edtdisco" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Artista</label>
+                            <input type="text" class="form-control-edtdisco" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control-edtdisco" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ano</label>
+                            <input type="text" class="form-control-edtdisco" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Valor</label>
+                            <input type="text" class="form-control-edtdisco" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                        <input type="submit" class="btn btn-info" value="Salvar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Modal HTML -->
+    <div id="deleteEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Deletar Disco</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Tem certeza de que deseja excluir estes registros?</p>
+                        <p class="text-warning"><small>Essa ac�o n�o pode ser desfeita.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                        <input type="submit" class="btn btn-danger" value="Deletar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- FOOTER-->
+    <footer class="footer py-lg-5">
+        <div class="container dark">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Museu do Vinil</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-light btn-social mx-2" href="#!"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a class="btn btn-light btn-social mx-2" href="#!"><i class="fab fa-github"></i></a>
+                    <a class="btn btn-light btn-social mx-2" href="#!"><i class="fa fa-envelope"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link-light text-decoration-none me-3" href="posts.html">Not�cias</a>
+                    <a class="link-light text-decoration-none" href="markteplace.html">MarketPlace</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/countdowntime/countdowntime.js"></script>
+
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
