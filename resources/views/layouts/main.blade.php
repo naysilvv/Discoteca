@@ -46,6 +46,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/market">MarketPlace</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/market/create/">Adicionar Disco</a>
+                </li>
             </ul>
         </div>
         <div class="mx-auto order-0">
@@ -59,9 +62,6 @@
            
             <ul class="navbar-nav ml-auto">
                 @auth
-                <li class="nav-item">
-                    <a class="nav-link" href="/market/create/">Adicionar Disco</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/dashboard">dashboard</a>
                 </li>

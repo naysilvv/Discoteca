@@ -20,7 +20,7 @@ Route::get('/post/{id}', [PostController::class, 'show']);
 
 Route::get('/market', [MarketController::class, 'index']);
 
-Route::get('/market/create', [MarketController::class, 'create']);
+Route::get('/market/create', [MarketController::class, 'create'])->middleware('auth');
 
 Route::post('/market', [MarketController::class, 'store']);
 

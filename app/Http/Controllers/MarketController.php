@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Market;
+use App\Models\User;
 
 class MarketController extends Controller
 {
@@ -50,6 +51,8 @@ class MarketController extends Controller
             $market->img = $imageName;
         }
 
+        $user = auth()->user();
+        $market->user_id = $user->id;
         $market->save();
 
         return redirect('/market')->with('msg', 'Post criado no marketplace!');
@@ -58,6 +61,8 @@ class MarketController extends Controller
     public function show($id) {
         $market = Market::findOrFail($id);
 
-        return view('detail-disco', ['markets' => $market]);
+        $marketOwner = User::where('id',$market->user_id)->first()->toArray();
+
+        return view('detail-disco', ['markets' => $market, 'marketOwner' => $marketOwner]);
     } 
 }

@@ -13,6 +13,7 @@
 			<input type="text" id="image22" class="oi" size="30" value="{{ $markets->price }}" disabled>
 			<input type="text" id="image22" class="oi" size="30" value="{{ $markets->email }}" disabled>
 			<input type="textarea" id="image22" class="oi" size="30" value="{{ $markets->description }}" disabled>
+			<input type="text" id="image22" class="oi" size="30" value="{{ $marketOwner['email'] }}" disabled>
 		</div>
 		<br>
 		<div class="disco9">
