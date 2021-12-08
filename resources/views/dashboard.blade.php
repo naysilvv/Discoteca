@@ -42,6 +42,9 @@
                     @endforeach
                 </tbody>
             </table>
+            @else
+            <p>Você ainda não tem discos registrados, <a href="/market/create">cadastre um disco aqui</a></p>
+            @endif
             <div class="clearfix">
                 <div class="hint-text">Mostrando <b>5</b> de <b>25</b> entradas</div>
                 <ul class="pagination">
@@ -57,48 +60,5 @@
         </div>
     </div>
 </div>
-<!-- Edit Modal HTML -->
-<div id="addEmployeeModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form>
-                <div class="modal-header">
-                    <h4 class="modal-title">Adicionar Disco</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Nome</label>
-                        <input type="text" class="form-control-edtdisco" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Artista</label>
-                        <input type="text" class="form-control-edtdisco" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control-edtdisco" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Ano</label>
-                        <input type="text" class="form-control-edtdisco" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Valor</label>
-                        <input type="text" class="form-control-edtdisco" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                    <input type="submit" class="btn btn-success" value="Adicionar">
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-@else
-<p>Você ainda não tem discos registrados, <a href="/market/create">cadastre um disco aqui</a></p>
-@endif
 
 @endsection
