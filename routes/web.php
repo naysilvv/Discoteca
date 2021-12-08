@@ -30,6 +30,6 @@ Route::get('/dashboard', [MarketController::class, 'dashboard'])->middleware('au
 
 Route::delete('/market/{id}', [MarketController::class, 'destroy'])->middleware('auth');
 
-Route::get('/market/{id}', [MarketController::class, 'edit'])->middleware('auth');
+Route::get('/market/edit/{id}', [MarketController::class, 'edit'])->middleware('auth');
 
 Route::put('/market/update/{id}', [MarketController::class, 'update'])->middleware('auth');

@@ -84,12 +84,14 @@ class MarketController extends Controller
         return redirect('/dashboard')->with('msg', 'Disco excluído com sucesso');
     }
 
-    public function edit($id)
+    
+    /*public function edit($id)
     {
         $market = Market::findOrFail($id);
 
         return view('/dashboard', ['market' => $market]);
-    }
+    }*/
+
 
     public function update(Request $request)
     {
