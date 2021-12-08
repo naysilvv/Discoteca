@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="/images/icons/icon-discoteca.png" />
+    <link rel="icon" type="/image/png" href="/images/icons/icon-discoteca.png" />
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
     <!--===============================================================================================-->
@@ -57,17 +58,17 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-      
+
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-           
+
             <ul class="navbar-nav ml-auto">
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard">dashboard</a>
+                    <a class="nav-link" href="/dashboard">Seus discos</a>
                 </li>
                 <li class="nav-item">
                     <form action="/logout" method="POST">
-                    @csrf   
+                        @csrf
                         <a class="nav-link" href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
                     </form>
                 </li>
@@ -82,14 +83,13 @@
                 @endguest
             </ul>
         </div>
-        
     </nav>
 
     <main>
         <div class="container-fluid">
             <div class="row">
                 @if(session('msg'))
-                    <p class="msg">{{ session('msg') }}</p>
+                <p class="msg">{{ session('msg') }}</p>
                 @endif
             </div>
         </div>
@@ -113,7 +113,7 @@
             </div>
         </div>
     </footer>
-
+    
     <!--===============================================================================================-->
     <script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
@@ -128,10 +128,8 @@
     <script src="/vendor/daterangepicker/daterangepicker.js"></script>
     <!--===============================================================================================-->
     <script src="/vendor/countdowntime/countdowntime.js"></script>
-
     <!--===============================================================================================-->
     <script src="/js/main.js"></script>
-
 </body>
 
 </html>

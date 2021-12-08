@@ -29,7 +29,7 @@
                 <!-- Portfolio item 1-->
                 <div class="portfolio-item">
                     <a class="portfolio-link" data-bs-toggle="modal" href="/market/{{ $item->id }}">
-                        <img class="img-fluid" src="/img/discos/{{ $item->img }}" alt="..." width="600" height="450"/>
+                        <img class="img-fluid img-disco" src="/img/discos/{{ $item->img }}" alt="..."/>
                     </a>
                     <div class="portfolio-caption">
                         <div class="portfolio-caption-heading">{{ $item->name }}</div>

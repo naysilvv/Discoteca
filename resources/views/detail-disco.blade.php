@@ -7,18 +7,17 @@
 <div class="container-login100">
 	<form class="logincadastrodisco validate-form">
 		<div class="disco9">
-			<input type="text" id="image22" class="oi" size="30" value="{{ $markets->name }}" disabled>
-			<input type="text" id="image22" class="oi" size="30" value="{{ $markets->artist }}" disabled>
-			<input type="text" id="image22" class="oi" size="30" value="{{ $markets->year }}" disabled>
-			<input type="text" id="image22" class="oi" size="30" value="{{ $markets->price }}" disabled>
-			<input type="text" id="image22" class="oi" size="30" value="{{ $markets->email }}" disabled>
-			<input type="textarea" id="image22" class="oi" size="30" value="{{ $markets->description }}" disabled>
-			<input type="text" id="image22" class="oi" size="30" value="{{ $marketOwner['email'] }}" disabled>
+			<input type="text" id="image22" class="oi" size="30" value="{{ $market->name }}" disabled>
+			<input type="text" id="image22" class="oi" size="30" value="{{ $market->artist }}" disabled>
+			<input type="text" id="image22" class="oi" size="30" value="{{ $market->year }}" disabled>
+			<input type="text" id="image22" class="oi" size="30" value="{{ $market->price }}" disabled>
+			<input type="textarea" id="image22" class="oi" size="30" value="{{ $market->description }}" disabled>
+			<input type="text" id="image22" class="oi" size="30" value="{{ $marketOwner->email }}" disabled>
 		</div>
 		<br>
 		<div class="disco9">
 			<div class="ImageContainer2">
-				<img src="/img/discos/{{ $markets->img }}" class="img-fluid" id="image22" alt="imagem do disco">
+				<img src="/img/discos/{{ $market->img }}" class="img-fluid" id="image22" alt="imagem do disco">
 			</div>
 		</div>
 	</form>

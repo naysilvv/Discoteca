@@ -25,6 +25,11 @@ Route::get('/market/create', [MarketController::class, 'create'])->middleware('a
 Route::post('/market', [MarketController::class, 'store']);
 
 Route::get('/market/{id}', [MarketController::class, 'show']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+Route::get('/dashboard', [MarketController::class, 'dashboard'])->middleware('auth');
+
+Route::delete('/market/{id}', [MarketController::class, 'destroy'])->middleware('auth');
+
+Route::get('/market/{id}', [MarketController::class, 'edit'])->middleware('auth');
+
+Route::put('/market/update/{id}', [MarketController::class, 'update'])->middleware('auth');

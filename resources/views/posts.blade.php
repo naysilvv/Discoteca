@@ -37,7 +37,6 @@
             </div>
         </div>
         @endforeach
-       
     </div>
      @if(count($posts) == 0 && $search)
             <p>Não é possivel encontrar essa busca: {{$search}}</p>
@@ -47,5 +46,4 @@
         @endif    
 </div>
  
-
 @endsection

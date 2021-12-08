@@ -11,12 +11,13 @@ class PostController extends Controller
     public function index()
     {
         $search = request('search');
-        if($search){
-             $posts = Post::where([
-                ['title','like','%'.$search.'%']
-             ])->get();
-        } else{
-             $posts = Post::all();
+        
+        if ($search) {
+            $posts = Post::where([
+                ['title', 'like', '%' . $search . '%']
+            ])->get();
+        } else {
+            $posts = Post::all();
         }
         return view('posts', ['posts' => $posts, 'search' => $search]);
     }
@@ -38,7 +39,7 @@ class PostController extends Controller
             $requestImage = $request->img;
 
             $extension = $requestImage->extension();
-            
+
             $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
 
             $requestImage->move(public_path('img/posts'), $imageName);
@@ -57,5 +58,4 @@ class PostController extends Controller
 
         return view('detail-post', ['post' => $post]);
     }
-
 }
