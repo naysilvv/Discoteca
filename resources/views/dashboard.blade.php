@@ -46,7 +46,7 @@
             <p>Você ainda não tem discos registrados, <a href="/market/create">cadastre um disco aqui</a></p>
             @endif
             <div class="clearfix">
-                <div class="hint-text">Mostrando <b>5</b> de <b>25</b> entradas</div>
+                <div class="hint-text">Mostrando <b>9</b> de <b>25</b> entradas</div>
                 <ul class="pagination">
                     <li class="page-item disabled"><a href="#">Anterior</a></li>
                     <li class="page-item active"><a href="#" class="page-link">1</a></li>

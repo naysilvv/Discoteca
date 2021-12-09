@@ -102,13 +102,13 @@
             <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-start">Museu do Vinil</div>
                 <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-light btn-social mx-2" href="#!"><i class="fab fa-facebook-f fa-lg"></i></a>
-                    <a class="btn btn-light btn-social mx-2" href="#!"><i class="fab fa-github"></i></a>
-                    <a class="btn btn-light btn-social mx-2" href="#!"><i class="fa fa-envelope"></i></a>
+                    <a class="btn btn-light btn-social mx-2" href="https://www.facebook.com/IFRNCampusCaico" target="blank_"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a class="btn btn-light btn-social mx-2" href="https://github.com/naysilvv/Discoteca" target="blank_"><i class="fab fa-github"></i></a>
+                    <a class="btn btn-light btn-social mx-2" href="https://www.instagram.com/ifrn_caico/" target="blank_"><i class="fab fa-instagram"></i></a>
                 </div>
                 <div class="col-lg-4 text-lg-end">
-                    <a class="link-light text-decoration-none me-3" href="posts.html">Notícias</a>
-                    <a class="link-light text-decoration-none" href="markteplace.html">MarketPlace</a>
+                    <a class="link-light text-decoration-none me-3" href="/">Notícias</a>
+                    <a class="link-light text-decoration-none" href="/market">MarketPlace</a>
                 </div>
             </div>
         </div>
