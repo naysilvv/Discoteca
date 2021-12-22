@@ -11,8 +11,6 @@
 			Cadastre seu Disco
 		</span>
 
-		Hally
-
 		<div class="row">
 
 			<div class="col-md-6 col-xs-7">
