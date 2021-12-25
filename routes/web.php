@@ -14,7 +14,15 @@ Route::get('/post/create', [PostController::class, 'create']);
 
 Route::post('/', [PostController::class, 'store']);
 
+Route::get('/post-dashboard', [PostController::class, 'dashboard'])->middleware('auth');
+
 Route::get('/post/{id}', [PostController::class, 'show']);
+
+Route::delete('/post/{id}', [PostController::class, 'destroy'])->middleware('auth');
+
+Route::get('/post/edit/{id}', [PostController::class, 'edit'])->middleware('auth');
+
+Route::put('/post/update/{id}', [PostController::class, 'update'])->middleware('auth');
 
 //Market Controller
 

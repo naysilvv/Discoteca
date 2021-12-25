@@ -62,4 +62,7 @@ class User extends Authenticatable
      public function markets(){
         return $this->hasMany('App\Models\Market');
     }
+      public function posts(){
+        return $this->hasMany('App\Models\Post');
+    }
 }

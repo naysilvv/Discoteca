@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Market;
 use App\Models\User;
 use Psy\SuperglobalsEnv;
+use Illuminate\Support\Facades\Auth;
 
 class MarketController extends Controller
 {
@@ -71,10 +72,18 @@ class MarketController extends Controller
     public function dashboard()
     {
         $user = auth()->user();
+        $role = Auth::user()->role;
 
-        $markets = $user->markets;
+        if($role=="1"){
+            $markets = Market::all();
 
-        return view('/dashboard', ['markets' => $markets]);
+            return view('admin.market-board', ['markets' => $markets]);
+        }else{
+
+           $markets = $user->markets;
+
+           return view('/dashboard', ['markets' => $markets]);  
+        }
     }
 
     public function destroy($id)
