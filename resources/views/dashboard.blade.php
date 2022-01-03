@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container-xl">
+<div class="container-xl" style="background-color:red">
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
@@ -57,8 +57,13 @@
                     <li class="page-item"><a href="#" class="page-link">Proximo</a></li>
                 </ul>
             </div>
+
         </div>
+        
     </div>
+    
+    <p class="pdetailpost"> oi caceta</p>
+   
 </div>
 
 @endsection

@@ -4,6 +4,7 @@
 
 @section('content')
 
+
 <div class="container-login100">
     <form action="/" method="POST" class="logincadastrodisco validate-form" enctype="multipart/form-data">
         @csrf
@@ -29,6 +30,7 @@
                         <input class="input100" type="text" name="description">
                         <span class="focus-input100"></span>
                         <span class="label-input100">Descrição</span>
+                        
                     </div>
                 </div>
             </div>

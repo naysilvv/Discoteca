@@ -10,7 +10,42 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
+ .post-preview > a {
+  color: #212529;
+  text-decoration: none;
+}
+.post-preview > a:focus, .post-preview > a:hover {
+  text-decoration: underline;
+  color: #A97E12;
+}
+.post-preview > a > .post-title {
+  font-size: 1.875rem;
+  margin-top: 1.875rem;
+  margin-bottom: 0.625rem;
+}
+.post-preview > a > .post-subtitle {
+  font-weight: 300;
+  margin-bottom: 0.625rem;
+}
+.post-preview > .post-meta {
+  font-size: 1.125rem;
+  font-style: italic;
+  margin-top: 0;
+  color: #6c757d;
+}
+.post-preview > .post-meta > a {
+  text-decoration: none;
+}
+@media (min-width: 992px) {
+  .post-preview > a > .post-title {
+    font-size: 2.25rem;
+  }
+}
+.pdetailpost{
+  color:black;
+  font-size: 20px;
+  text-align:justify;
+}
 .form-control-edtdisco {
     display: block;
     width: 100%;
@@ -197,7 +232,7 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
-  background-color: #EACE88;
+  background-color: #F8F9FA;
 }
 
 hr {
@@ -4933,6 +4968,7 @@ textarea.form-control-lg {
 .card-body {
   flex: 1 1 auto;
   padding: 1rem 1rem;
+  color:#fff;
   
 }
 

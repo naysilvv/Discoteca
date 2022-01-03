@@ -4,25 +4,29 @@
 
 @section('content')
 
-<div class="container-login100">
-	<form class="logincadastrodisco validate-form">
-		<div class="disco9">
-			<input type="text" id="image22" class="oi" size="30" value="{{ $market->name }}" disabled>
-			<input type="text" id="image22" class="oi" size="30" value="{{ $market->artist }}" disabled>
-			<input type="text" id="image22" class="oi" size="30" value="{{ $market->year }}" disabled>
-			<input type="text" id="image22" class="oi" size="30" value="{{ $market->price }}" disabled>
-			<input type="textarea" id="image22" class="oi" size="30" value="{{ $market->description }}" disabled>
-			<input type="text" id="image22" class="oi" size="30" value="{{ $marketOwner->email }}" disabled>
-		</div>
-		<br>
-		<div class="disco9">
-			<div class="ImageContainer2">
-				<img src="/img/discos/{{ $market->img }}" class="img-fluid" id="image22" alt="imagem do disco">
-			</div>
-		</div>
-	</form>
-</div>
-
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/img/discos/{{ $market->img }}" alt="..." /></div>
+                <div class="col-md-6">
+                    <h1 class="display-5 fw-bolder">{{ $market->name }}</h1>
+                    <div class="fs-5 mb-5">
+                        <span>R$ {{ $market->price }}</span>
+                    </div>
+                    <p class="lead">Artista: {{ $market->artist }}</p>
+					<p class="lead">Ano: {{ $market->year }}</p>
+					<p class="lead">Descrição: {{ $market->description }}</p>
+					<p class="lead">Email: {{ $marketOwner->email }}</p>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                            <i class="bi bi-hand-index-thumb-fill"></i>
+                                Entrar em contato
+                        </button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
 @endsection
 
 <!-- About

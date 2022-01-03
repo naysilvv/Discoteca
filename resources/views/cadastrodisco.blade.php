@@ -7,6 +7,7 @@
 <div class="container-login100">
 	<form action="/market" method="POST" class="logincadastrodisco validate-form" enctype="multipart/form-data">
 		@csrf
+		<hr class="my-4" />
 		<span class="login100-form-title p-b-43">
 			Cadastre seu Disco
 		</span>

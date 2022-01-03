@@ -17,24 +17,25 @@
 
 @section('content')
 
-<div class="container">
+<div class="container px-4 px-lg-5">
   
-    <div class="row">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
         @foreach($posts as $post)
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-header">
-                    Notícia
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">{{ $post->title }}</h5>
-                    <p class="card-text">{{ $post->description }}</p>
-                    <a href="/post/{{ $post->id }}" class="btn btn-primary">Ler matéria</a>
-                </div>
-                <div class="card-footer text-muted">
-                    <p>{{ date('d/m/Y'), strtotime($post->created_at) }}</p>
-                </div>
+        <div class="col-md-10 col-lg-6 col-xl-7">
+            <div class="post-preview">
+                <a href="/post/{{ $post->id }}">
+                    <h2 class="post-title">{{ $post->title }}</h2>
+                    <h3 class="post-subtitle">{{ $post->description }}</h3>
+                </a>
+                <p class="post-meta">
+                    Posted by
+                    {{ date('d/m/Y'), strtotime($post->created_at) }}
+                </p>
             </div>
+                    <!-- Divider-->
+            <hr class="my-4" />
+                    <!-- Post preview-->
+           
         </div>
         @endforeach
     </div>
