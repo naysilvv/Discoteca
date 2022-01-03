@@ -11,11 +11,15 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Titulo</label>
-                        <input value="{{ $post->title }}" type="text" name="name" class="form-control-edtdisco" required>
+                        <input value="{{ $post->title }}" type="text" name="title" class="form-control-edtdisco" required>
                     </div>
                     <div class="form-group">
                         <label>Descrição</label>
                         <input value="{{ $post->description }}" type="text" name="description" class="form-control-edtdisco" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Conteudo</label>
+                        <input value="{{ $post->content }}" type="text" name="content" class="form-control-edtdisco" required>
                     </div>
                     <div class="form-group">
                         <label for="image">Imagem do disco:</label>

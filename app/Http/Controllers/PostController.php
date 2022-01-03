@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Post;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -13,7 +12,7 @@ class PostController extends Controller
     public function index()
     {
         $search = request('search');
-        
+
         if ($search) {
             $posts = Post::where([
                 ['title', 'like', '%' . $search . '%']
@@ -60,13 +59,13 @@ class PostController extends Controller
 
         return view('detail-post', ['post' => $post]);
     }
-    
-     public function dashboard()
+
+    public function dashboard()
     {
         $user = auth()->user();
         $role = Auth::user()->role;
 
-        if($role=="1") {
+        if ($role == "1") {
             $posts = Post::all();
 
             return view('admin.post-board', ['posts' => $posts]);
@@ -77,17 +76,8 @@ class PostController extends Controller
     {
         Post::findOrFail($id)->delete();
 
-        return redirect('admin.post-board');
+        return redirect('/post-dashboard');
     }
-
-    
-    /*public function edit($id)
-    {
-        $market = Market::findOrFail($id);
-
-        return view('/dashboard', ['market' => $market]);
-    }*/
-
 
     public function update(Request $request)
     {
@@ -105,10 +95,8 @@ class PostController extends Controller
             $data['img'] = $imageName;
         }
 
-
         Post::findOrFail($request->id)->update($data);
 
-        return redirect('admin.dashboard');
+        return redirect('/post-dashboard');
     }
-
 }
