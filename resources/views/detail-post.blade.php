@@ -15,7 +15,7 @@
 				  <h2 class="subheading">{{ $post->description }}</h2>
 				  
 				  <span class="meta">Posted by
-					<a href="#">nameauthor</a> 
+					<a href="#">{{ $postOwner->name }}</a> 
 					{{ date('d/m/Y'), strtotime($post->created_at) }} <span class="reading-time" title="Estimated read time"> </span>
 	  
 				</span>

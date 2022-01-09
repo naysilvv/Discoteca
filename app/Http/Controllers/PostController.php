@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -45,8 +46,8 @@ class PostController extends Controller
 
             $post->img = $imageName;
         }
-        // $user = auth()->user();
-        // $post->user_id = $user->id;
+        $user = auth()->user();
+        $post->user_id = $user->id;
         $post->save();
         return redirect('/')->with('msg', 'Post criado no marketplace!');
     }
@@ -54,7 +55,8 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        return view('detail-post', ['post' => $post]);
+        $postOwner = User::where('id', $post->user_id)->first();
+        return view('detail-post', ['post' => $post, 'postOwner' => $postOwner]);
     }
 
     public function dashboard()
