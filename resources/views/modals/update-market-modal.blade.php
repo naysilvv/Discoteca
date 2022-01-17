@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label>Ano</label>
-                        <input value="{{ $market->year }}" type="text" name="year" class="form-control-edtdisco" required>
+                        <input value="{{ $market->year }}" type="text" name="year" class="form-control-edtdisco" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="4">
                     </div>
                     <div class="form-group">
                         <label>Valor</label>
