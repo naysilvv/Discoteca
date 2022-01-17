@@ -32,6 +32,15 @@ class MarketController extends Controller
 
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'artist' => 'required|max:255',
+            'year' => 'required|max:4|integer',
+            'price' => 'required|numeric',
+            'img' => 'required',
+            'description' => 'required',
+        ]);
+
         $market = new Market;
 
         $market->name = $request->name;
@@ -74,15 +83,15 @@ class MarketController extends Controller
         $user = auth()->user();
         $role = Auth::user()->role;
 
-        if($role=="1"){
+        if ($role == "1") {
             $markets = Market::all();
 
             return view('admin.market-board', ['markets' => $markets]);
-        }else{
+        } else {
 
-           $markets = $user->markets;
+            $markets = $user->markets;
 
-           return view('/dashboard', ['markets' => $markets]);  
+            return view('/dashboard', ['markets' => $markets]);
         }
     }
 

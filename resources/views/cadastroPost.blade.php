@@ -17,7 +17,7 @@
             <div class="col-md-6 col-xs-7">
                 <div class="form-group">
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" name="title">
+                        <input class="input100" type="text" name="title" required>
                         <span class="focus-input100"></span>
                         <span class="label-input100">Título do post</span>
                     </div>
@@ -27,10 +27,9 @@
             <div class="col-md-6 col-xs-7">
                 <div class="form-group">
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" name="description">
+                        <input class="input100" type="text" name="description" required>
                         <span class="focus-input100"></span>
                         <span class="label-input100">Descrição</span>
-                        
                     </div>
                 </div>
             </div>
@@ -43,13 +42,13 @@
                             <img src="/img/photo.png" id="image" alt="selecione uma imagem">
                         </div>
                     </div>
-                    <input type="file" name="img" id="flimage" accept="image/*">
+                    <input type="file" name="img" id="flimage" accept="image/*" required>
                 </div>
             </div>
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-            <input class="input100" type="textarea" name="content">
+            <input class="input100" type="textarea" name="content" required>
             <span class="focus-input100"></span>
             <span class="label-input100">Conteudo</span>
         </div>

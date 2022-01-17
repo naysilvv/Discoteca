@@ -9,7 +9,6 @@ photo.addEventListener('click', () => {
 (function ($) {
     "use strict";
 
-
     /*==================================================================
     [ Focus Contact2 ]*/
     $('.input100').each(function(){
@@ -73,5 +72,4 @@ photo.addEventListener('click', () => {
         $(thisAlert).removeClass('alert-validate');
     }
     
-
 })(jQuery);

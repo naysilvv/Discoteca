@@ -404,6 +404,16 @@ input.input100 {
   transition: all 0.4s;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /*---------------------------------------------*/
 
 .focus-input100 {
