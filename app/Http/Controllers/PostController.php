@@ -17,7 +17,7 @@ class PostController extends Controller
                 ['title', 'like', '%' . $search . '%']
             ])->get();
         } else {
-            $posts = Post::all();
+            $posts = Post::simplePaginate(10);
         }
         return view('posts', ['posts' => $posts, 'search' => $search]);
     }

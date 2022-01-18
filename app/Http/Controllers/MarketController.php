@@ -8,6 +8,7 @@ use App\Models\Market;
 use App\Models\User;
 use Psy\SuperglobalsEnv;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class MarketController extends Controller
 {
@@ -19,7 +20,8 @@ class MarketController extends Controller
                 ['name', 'like', '%' . $search . '%']
             ])->get();
         } else {
-            $items = Market::all();
+            $items = Market::simplePaginate(9);
+            //$items = Market::all();
         }
 
         return view('/marketplace', ['items' => $items, 'search' => $search]);
@@ -56,7 +58,7 @@ class MarketController extends Controller
         $market->user_id = $user->id;
         $market->save();
 
-        return redirect('/market')->with('msg', 'Post criado no marketplace!');
+        return redirect('/market');
     }
 
     public function show($id)
