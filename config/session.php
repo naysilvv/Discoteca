@@ -155,7 +155,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', 'https://museuvinil.herokuapp.com'),
+    'domain' => env('SESSION_DOMAIN', 'https://museuvinil.herokuapp.com/'),
 
     /*
     |--------------------------------------------------------------------------
