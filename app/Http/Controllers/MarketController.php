@@ -32,15 +32,6 @@ class MarketController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|max:255',
-            'artist' => 'required|max:255',
-            'year' => 'required|max:4|integer',
-            'price' => 'required|numeric',
-            'img' => 'required',
-            'description' => 'required',
-        ]);
-
         $market = new Market;
 
         $market->name = $request->name;

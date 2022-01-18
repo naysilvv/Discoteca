@@ -24,7 +24,12 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('cadastroPost');
+        $user = auth()->user();
+        $role = Auth::user()->role;
+
+        if ($role == "1") {
+            return view('admin.cadastroPost');
+        }
     }
 
     public function store(Request $request)
@@ -49,7 +54,7 @@ class PostController extends Controller
         $user = auth()->user();
         $post->user_id = $user->id;
         $post->save();
-        return redirect('/')->with('msg', 'Post criado no marketplace!');
+        return redirect('/');
     }
 
     public function show($id)

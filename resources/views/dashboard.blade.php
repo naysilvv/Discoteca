@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container-xl" style="background-color:red">
+<div class="container-xl">
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
@@ -61,8 +61,6 @@
         </div>
         
     </div>
-    
-    <p class="pdetailpost"> oi caceta</p>
    
 </div>
 

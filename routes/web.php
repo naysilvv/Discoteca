@@ -10,7 +10,7 @@ use App\Http\Controllers\MarketController;
 
 Route::get('/', [PostController::class, 'index']);
 
-Route::get('/post/create', [PostController::class, 'create']);
+Route::get('/post/create', [PostController::class, 'create'])->middleware('auth');
 
 Route::post('/', [PostController::class, 'store']);
 
