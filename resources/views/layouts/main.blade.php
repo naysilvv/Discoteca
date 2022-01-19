@@ -39,7 +39,7 @@
     <link href="/css/styles.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="position-relative">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
@@ -87,7 +87,7 @@
         </div>
     </nav>
 
-    <main>
+    <main class="main-test">
         <div class="container-fluid">
             <div class="row">
                 @if(session('msg'))
