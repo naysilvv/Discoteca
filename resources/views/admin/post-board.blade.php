@@ -18,6 +18,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Titulo</th>
                         <th>Descrição</th>
                     </tr>
@@ -27,6 +28,7 @@
                     @include('modals.update-post-modal', array('post' => $post))
                     @include('modals.delete-post-modal', array('post' => $post))
                     <tr>
+                        <td>{{$loop->index + 1}}</td>
                         <td><a href="/post/{{ $post->id }}">{{ $post->title }}</a></td>
                         <td><a href="/post/{{ $post->id }}">{{ $post->description }}</a></td>
                         <td>
@@ -41,16 +43,7 @@
             <p>Você ainda não tem discos registrados, <a href="/post/create">cadastre um disco aqui</a></p>
             @endif
             <div class="clearfix">
-                <div class="hint-text">Mostrando <b>9</b> de <b>25</b> entradas</div>
-                <ul class="pagination">
-                    <li class="page-item disabled"><a href="#">Anterior</a></li>
-                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link">Proximo</a></li>
-                </ul>
+                <div class="hint-text">Mostrando {{$posts->count()}} Posts</div>
             </div>
         </div>
     </div>

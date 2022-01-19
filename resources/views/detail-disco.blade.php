@@ -17,12 +17,6 @@
 					<p class="lead">Ano: {{ $market->year }}</p>
 					<p class="lead">Descrição: {{ $market->description }}</p>
 					<p class="lead">Email: {{ $marketOwner->email }}</p>
-                    <div class="d-flex">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <i class="bi bi-hand-index-thumb-fill"></i>
-                                Entrar em contato
-                        </button>
-                    </div>
                 </div>
         </div>
     </div>
