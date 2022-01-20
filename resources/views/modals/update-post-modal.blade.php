@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label for="image">Imagem do post:</label>
-                        <input type="file" id="image" name="img" class="form-control-file" required>
+                        <input type="file" id="image" name="img" class="form-control-file">
                         <br>
                         <img class="image-preview" src="/img/posts/{{ $post->img }}" width="100" height="50">
                     </div>
