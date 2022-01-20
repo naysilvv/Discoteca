@@ -1,11 +1,14 @@
-@extends('layouts.main')
+@extends('layouts.main-dashboard')
 
 @section('title', 'Museu do Vinil')
 
 @section('content')
-
+<head>
+<link rel="icon" type="/image/png" href="/images/icons/icon-discoteca.png" />
+<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+</head>
 <div class="container-xl">
-    <div class="table-responsive">
+<div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
@@ -62,7 +65,6 @@
                      -->
                 </ul>
             </div>
-
         </div>
     </div>
 </div>

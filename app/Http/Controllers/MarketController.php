@@ -8,7 +8,6 @@ use App\Models\Market;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 
 class MarketController extends Controller
 {
@@ -97,7 +96,7 @@ class MarketController extends Controller
 
     public function update(Request $request)
     {
-        $market = Market::findOrFail($request->id);
+        $market = Market::findOrFail($request);
 
         $data = $request->all();
 

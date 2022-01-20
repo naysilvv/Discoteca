@@ -40,4 +40,4 @@ Route::delete('/market/{id}', [MarketController::class, 'destroy'])->middleware(
 
 Route::get('/market/edit/{id}', [MarketController::class, 'edit'])->middleware('auth');
 
-Route::post('/market/update/{id}', [MarketController::class, 'update'])->middleware('auth');
+Route::put('/market/update/{id}', [MarketController::class, 'update'])->middleware('auth');

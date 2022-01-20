@@ -3,11 +3,16 @@
 @section('title', 'Museu do Vinil')
 
 @section('content')
-
+<head>
+<link rel="icon" type="/image/png" href="/images/icons/icon-discoteca.png" />
+<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+</head>
 <div class="container-login100">
+	<div class="flex-sb-m w-full p-t-3 p-b-32"></div>
+	<div class="flex-sb-m w-full p-t-3 p-b-32"></div>	
 	<form action="/market" method="POST" class="logincadastrodisco validate-form" id="form" enctype="multipart/form-data">
 		@csrf
-		<hr class="my-4" />
+		
 		<span class="login100-form-title p-b-43">
 			Cadastre seu Disco
 		</span>
@@ -81,7 +86,9 @@
 				Registrar
 			</button>
 		</div>
+	
 	</form>
+	<div class="flex-sb-m w-full p-t-3 p-b-32"></div>
 </div>
 
 @endsection
