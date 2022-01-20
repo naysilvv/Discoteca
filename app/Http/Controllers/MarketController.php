@@ -99,13 +99,13 @@ class MarketController extends Controller
     {
         $market = Market::findOrFail($request->id);
 
-        $market->name = $request->name;
-        $market->artist = $request->artist;
-        $market->year = $request->year;
-        $market->price = $request->price;
-        $market->description = $request->description;
+        $data = $request->all();
 
-        dd($request->img);
+        // $market->name = $request->name;
+        // $market->artist = $request->artist;
+        // $market->year = $request->year;
+        // $market->price = $request->price;
+        // $market->description = $request->description;
 
         if ($request->hasFile('img') && $request->file('img')->isValid()) {
             $destination = public_path('/img/discos/' . $market->img);
@@ -122,10 +122,10 @@ class MarketController extends Controller
 
             $requestImage->move(public_path('/img/discos'), $imageName);
 
-            $market->img = $imageName;
+            $data['img'] = $imageName;
         }
 
-        $market->update();
+        $market->update($data);
 
         return redirect('/dashboard');
     }

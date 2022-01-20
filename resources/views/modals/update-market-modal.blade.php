@@ -30,8 +30,8 @@
                         <input value="{{ $market->description }}" type="text" name="description" class="form-control-edtdisco" required>
                     </div>
                     <div class="form-group">
-                        <label for="image">Imagem do disco:</label>
-                        <input type="file" id="image" name="img" class="form-control-file">
+                        <label for="img">Imagem do disco:</label>
+                        <input type="file" id="img" name="img" class="form-control-file">
                         <br>
                         <img class="image-preview" src="/img/discos/{{ $market->img }}" width="100" height="50">
                     </div>

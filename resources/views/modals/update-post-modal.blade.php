@@ -22,10 +22,10 @@
                         <input value="{{ $post->content }}" type="text" name="content" class="form-control-edtdisco" required>
                     </div>
                     <div class="form-group">
-                        <label for="image">Imagem do disco:</label>
+                        <label for="image">Imagem do post:</label>
                         <input type="file" id="image" name="img" class="form-control-file" required>
                         <br>
-                        <img class="image-preview" src="/img/discos/{{ $post->img }}" width="100" height="50">
+                        <img class="image-preview" src="/img/posts/{{ $post->img }}" width="100" height="50">
                     </div>
                 </div>
                 <div class="modal-footer">
