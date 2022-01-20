@@ -331,7 +331,7 @@ input[type="file"] {
 	max-width: 300px;
 }
 
-/* #image {
+ #image {
 	max-width: 80px;
 	width: 100%;
 	border: 5px solid #fff;
@@ -339,7 +339,7 @@ input[type="file"] {
 	border-radius: 50%;
 	cursor: pointer;
 	transition: background .3s;
-} */
+}
 
 #image:hover {
 		background-color: #fff;
