@@ -7,7 +7,7 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/img/discos/{{ $market->img }}" alt="..." /></div>
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/img/discos/{{ $market->img }}" alt="..." width="500" height="500"/></div>
                 <div class="col-md-6">
                     <h1 class="display-5 fw-bolder">{{ $market->name }}</h1>
                     <div class="fs-5 mb-5">
@@ -17,12 +17,6 @@
 					<p class="lead">Ano: {{ $market->year }}</p>
 					<p class="lead">Descrição: {{ $market->description }}</p>
 					<p class="lead">Email: {{ $marketOwner->email }}</p>
-                    <div class="d-flex">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <i class="bi bi-hand-index-thumb-fill"></i>
-                                Entrar em contato
-                        </button>
-                    </div>
                 </div>
         </div>
     </div>
