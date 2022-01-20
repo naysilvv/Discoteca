@@ -1,7 +1,10 @@
 @extends('layouts.main')
 
 @section('title', 'Museu do Vinil')
-
+<head>
+<link rel="icon" type="/image/png" href="/images/icons/icon-discoteca.png" />
+<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+</head>
 <header class="masthead">
     <div class="container">
         <div class="input-group-prepend">
@@ -28,7 +31,6 @@
                     <h3 class="post-subtitle">{{ $post->description }}</h3>
                 </a>
                 <p class="post-meta">
-                    Posted by
                     {{ date('d/m/Y'), strtotime($post->created_at) }}
                 </p>
             </div>

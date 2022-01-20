@@ -105,7 +105,7 @@ class MarketController extends Controller
         $market->price = $request->price;
         $market->description = $request->description;
 
-        dd($request->img);
+        
 
         if ($request->hasFile('img') && $request->file('img')->isValid()) {
             $destination = public_path('/img/discos/' . $market->img);

@@ -4,7 +4,6 @@
 
 @section('content')
 
-
 <div class="container-login100">
     <form action="/" method="POST" class="logincadastrodisco validate-form" enctype="multipart/form-data">
         @csrf
@@ -47,13 +46,7 @@
             </div>
         </div>
 
-        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-            <input class="input100" type="textarea" name="content" required>
-            <span class="focus-input100"></span>
-            <span class="label-input100">Conteudo</span>
-        </div>
-        <div class="flex-sb-m w-full p-t-3 p-b-32">
-        </div>
+        <textarea class="text-area" data-validate="Valid email is required: ex@abc.xyz" type="textarea" name="content" required></textarea>
         <div class="container-login100-form-btn">
             <button class="login100-form-btn">
                 Registrar
