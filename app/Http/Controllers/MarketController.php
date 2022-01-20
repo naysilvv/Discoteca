@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Models\Market;
 use App\Models\User;
-use Psy\SuperglobalsEnv;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class MarketController extends Controller
 {
@@ -97,9 +97,23 @@ class MarketController extends Controller
 
     public function update(Request $request)
     {
-        $data = $request->all();
+        $market = Market::findOrFail($request->id);
+
+        $market->name = $request->name;
+        $market->artist = $request->artist;
+        $market->year = $request->year;
+        $market->price = $request->price;
+        $market->description = $request->description;
+
+        dd($request->img);
 
         if ($request->hasFile('img') && $request->file('img')->isValid()) {
+            $destination = public_path('/img/discos/' . $market->img);
+
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+
             $requestImage = $request->img;
 
             $extension = $requestImage->extension();
@@ -108,11 +122,10 @@ class MarketController extends Controller
 
             $requestImage->move(public_path('/img/discos'), $imageName);
 
-            $data['img'] = $imageName;
+            $market->img = $imageName;
         }
 
-
-        Market::findOrFail($request->id)->update($data);
+        $market->update();
 
         return redirect('/dashboard');
     }
