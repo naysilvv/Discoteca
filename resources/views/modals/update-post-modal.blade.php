@@ -22,8 +22,8 @@
                         <input value="{{ $post->content }}" type="text" name="content" class="form-control-edtdisco" required>
                     </div>
                     <div class="form-group">
-                        <label for="image">Imagem do post:</label>
-                        <input type="file" id="image" name="img" class="form-control-file">
+                        <label for="img{{ $post->id }}">Clique para mudar a imagem do post:</label>
+                        <input type="file" id="img{{ $post->id }}" name="img" class="form-control-file">
                         <br>
                         <img class="image-preview" src="/img/posts/{{ $post->img }}" width="100" height="50">
                     </div>

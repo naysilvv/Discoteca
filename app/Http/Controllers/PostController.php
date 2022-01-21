@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
@@ -87,7 +88,16 @@ class PostController extends Controller
     {
         $data = $request->all();
 
+        $post = Post::findOrFail($request->id);
+
         if ($request->hasFile('img') && $request->file('img')->isValid()) {
+
+            $destination = public_path('/img/posts/' . $post->img);
+
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+
             $requestImage = $request->img;
 
             $extension = $requestImage->extension();

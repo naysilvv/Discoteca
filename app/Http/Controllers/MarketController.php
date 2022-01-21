@@ -96,7 +96,7 @@ class MarketController extends Controller
 
     public function update(Request $request)
     {
-        $market = Market::findOrFail($request);
+        $market = Market::findOrFail($request->id);
 
         $data = $request->all();
 
@@ -105,6 +105,8 @@ class MarketController extends Controller
         // $market->year = $request->year;
         // $market->price = $request->price;
         // $market->description = $request->description;
+
+        // dd($data);
 
         if ($request->hasFile('img') && $request->file('img')->isValid()) {
             $destination = public_path('/img/discos/' . $market->img);

@@ -2,8 +2,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="/market/update/{{ $market->id }}" method="POST" enctype="multipart/form-data">
-                @csrf
                 @method('PUT')
+                @csrf
                 <div class="modal-header">
                     <h4 class="modal-title">Editar</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -30,8 +30,8 @@
                         <input value="{{ $market->description }}" type="text" name="description" class="form-control-edtdisco" required>
                     </div>
                     <div class="form-group">
-                        <label for="img">Imagem do disco:</label>
-                        <input type="file" id="img" name="img" class="form-control-file">
+                        <label for="img{{ $market->id }}">Clique para mudar a imagem do disco:</label>
+                        <input type="file" id="img{{ $market->id }}" name="img" class="form-control-file">
                         <br>
                         <img class="image-preview" src="/img/discos/{{ $market->img }}" width="100" height="50">
                     </div>
