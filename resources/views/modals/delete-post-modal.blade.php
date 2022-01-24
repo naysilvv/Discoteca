@@ -4,7 +4,7 @@
             <form action="/post/{{ $post->id }}" method="POST">
                 @csrf
                 <div class="modal-header">
-                    <h4 class="modal-title">Deletar Disco</h4>
+                    <h4 class="modal-title">Deletar Post</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main-dashboard')
 
 @section('title', 'Museu do Vinil')
 
@@ -40,7 +40,7 @@
                 </tbody>
             </table>
             @else
-            <p>Você ainda não tem discos registrados, <a href="/post/create">cadastre um disco aqui</a></p>
+            <p>Você ainda não tem posts registrados, <a href="/post/create">cadastre um post aqui</a></p>
             @endif
             <div class="clearfix">
                 <div class="hint-text">Mostrando {{$posts->count()}} Posts</div>
