@@ -40,7 +40,7 @@
 </head>
 
 <body class="position-relative">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -52,6 +52,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/market/create/">Adicionar Disco</a>
                 </li>
+                @if(auth()->check())
+                @if(auth()->user()->role == 1)
+                <li class="nav-item">
+                    <a class="nav-link" href="/post/create">Adicionar Post</a>
+                </li>
+                @endif
+                @endif
             </ul>
         </div>
         <div class="mx-auto order-0">
@@ -62,11 +69,17 @@
         </div>
 
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-
             <ul class="navbar-nav ml-auto">
+                @if(auth()->check())
+                @if(auth()->user()->role == 1)
+                <li class="nav-item">
+                    <a class="nav-link" href="/post-dashboard">Painel de Posts</a>
+                </li>
+                @endif
+                @endif
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard">Seus discos</a>
+                    <a class="nav-link" href="/dashboard">Painel de Discos</a>
                 </li>
                 <li class="nav-item">
                     <form action="/logout" method="POST">
