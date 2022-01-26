@@ -14,16 +14,16 @@ class MarketController extends Controller
     public function index()
     {
         $search = request('search');
+        
         if ($search) {
             $items = Market::where([
                 ['name', 'like', '%' . $search . '%']
             ])->get();
         } else {
             $items = Market::simplePaginate(9);
-            //$items = Market::all();
         }
 
-        return view('/marketplace', ['items' => $items, 'search' => $search]);
+        return view('/marketplace', ['items' => $items, 'search' => $search, 'showPagination' => is_null($search)]);
     }
 
     public function create()

@@ -1,9 +1,10 @@
 @extends('layouts.main')
 
 @section('title', 'Museu do Vinil')
+
 <head>
-<link rel="icon" type="/image/png" href="/images/icons/icon-discoteca.png" />
-<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="/image/png" href="/images/icons/icon-discoteca.png" />
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
 </head>
 <header class="masthead">
     <div class="container">
@@ -42,7 +43,9 @@
             </div>
             @endforeach
 
+            @if($showPagination)
             {{ $items->links() }}
+            @endif
 
             @if(count($items) == 0 && $search)
             <p>Não é possivel encontrar essa busca: {{$search}}</p>

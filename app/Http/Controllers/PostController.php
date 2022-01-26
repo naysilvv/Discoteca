@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
@@ -17,10 +18,11 @@ class PostController extends Controller
             $posts = Post::where([
                 ['title', 'like', '%' . $search . '%']
             ])->get();
-        } else {
-            $posts = Post::simplePaginate(10);
         }
-        return view('posts', ['posts' => $posts, 'search' => $search]);
+
+        $posts = Post::simplePaginate(10);
+
+        return view('posts', ['posts' => $posts, 'search' => $search, 'showPagination' => is_null($search)]);
     }
 
     public function create()
