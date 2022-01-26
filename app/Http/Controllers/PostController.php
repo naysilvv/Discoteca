@@ -18,11 +18,11 @@ class PostController extends Controller
             $posts = Post::where([
                 ['title', 'like', '%' . $search . '%']
             ])->get();
+        } else {
+            $posts = Post::simplePaginate(10);
         }
 
-        $posts = Post::simplePaginate(10);
-
-        return view('posts', ['posts' => $posts, 'search' => $search, 'showPagination' => is_null($search)]);
+        return view('/posts', ['posts' => $posts, 'search' => $search, 'showPagination' => is_null($search)]);
     }
 
     public function create()
